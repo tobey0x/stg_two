@@ -5,6 +5,9 @@ const queries = require("./queries");
 const addUser = (req, res) => {
   const name = req.body.name;
 
+  if (typeof name !== "string") {
+    return res.status(400).json({ error: "Name should be a string" });
+  }
   
   pool.query(queries.addUser, [name], (error, results) => {
     if (error) {
@@ -33,6 +36,10 @@ const getUserById = (req, res) => {
 const updateUser = (req, res) => {
   const user_id = parseInt(req.params.user_id)
   const name = req.body.name;
+
+  if (typeof name !== "string") {
+    return res.status(400).json({ error: "Name should be a string" });
+  }
 
   pool.query(queries.updateUser, [name, user_id], (error, results) => {
     if (error) {
