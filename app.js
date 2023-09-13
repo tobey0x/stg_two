@@ -1,34 +1,21 @@
 const express = require("express")
-const bodyParser = require("body-parser")
+const hngInternRoutes = require("./src/interns/routes")
+
 const app = express()
-
 const PORT = process.env.PORT || 3000;
-const db = require("./queries");
 
-app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+app.use(express.json());
 
-app.post('/api', (req, res) => {
-  const { firstName, lastname } = req.body;
-
-  
+app.get('/', (req, res) => {
+  res.send("Hello world")
 })
 
-app.get('/api/user_id', (req, res) => {
-  
-})
-
-
-
+app.use("/api", hngInternRoutes);
 
 
 
 
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+  console.log(`app listening on port ${PORT}`)
 })
