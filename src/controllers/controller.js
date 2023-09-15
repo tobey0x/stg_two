@@ -46,12 +46,12 @@ exports.getPersonById = (req, res) => {
 };
 
 exports.updatePerson = (req, res) => {
-  const id = req.params.id;
+  const id = req.params.user_id;
 
-  Person.update(req.body, {
-    where: { id: id },
+  Person.update({name: req.body.name}, {
+    where: { id: id }
   })
-    .then((num) => {
+    .then(num => {
       if (num == 1) {
         res.send({
           message: "Person was updated successfully.",
@@ -64,7 +64,7 @@ exports.updatePerson = (req, res) => {
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Error updating Person with id=" + id,
+        message: `Error updating Person with id= ${id}`,
       });
     });
 };

@@ -90,7 +90,10 @@ Response:
 
 ```json
 {
-  "id": 1
+	"id": 1,
+	"name": "John Doe",
+	"updatedAt": "2023-09-15T15:04:03.925Z",
+	"createdAt": "2023-09-15T15:04:03.925Z"
 }
 ```
 
@@ -106,8 +109,10 @@ Response:
 
 ```json
 {
-  "id": 1,
-  "name": "John Doe",
+	"id": 1,
+	"name": "John Doe",
+	"updatedAt": "2023-09-15T15:04:03.925Z",
+	"createdAt": "2023-09-15T15:04:03.925Z"
 }
 ```
 
@@ -120,7 +125,7 @@ PUT /api/1
 Content-Type: application/json
 
 {
-  "name": "Updated Name",
+  "message": "Person was updated successfully.",
 }
 ```
 
@@ -144,7 +149,7 @@ Response:
 
 ```json
 {
-  "message": "Person deleted successfully"
+  "message": "Person was deleted successfully!"
 }
 ```
 
