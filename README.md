@@ -48,11 +48,10 @@ Before you begin, ensure you have met the following requirements:
 4. Create a `.env` file in the project root and add your database configuration:
 
    ```env
-   DB_HOST=your_db_host
-   DB_PORT=your_db_port
-   DB_NAME=your_db_name
-   DB_USER=your_db_user
-   DB_PASSWORD=your_db_password
+   HOST=your_db_host
+   DATABASE=your_db_name
+   USER=your_db_user
+   PASSWORD=your_db_password
    ```
 
 5. Start the server:
