@@ -1,4 +1,3 @@
-I apologize for the oversight. Here's the complete README content in a single markdown file, without splitting:
 
 ```markdown
 # Node.js REST API with PostgreSQL
